@@ -9,10 +9,13 @@ from langchain_experimental.plan_and_execute import (
     load_chat_planner,
 )
 
+import sys
+sys.path.append("..")
 from config import set_environment
-from software_development.python_developer import DEV_PROMPT, PythonDeveloper, PythonExecutorInput
-
 set_environment()
+
+from python_developer import DEV_PROMPT, PythonDeveloper, PythonExecutorInput
+
 
 todo_prompt = PromptTemplate.from_template(
     "You are a planner who is an expert at coming up with requirements, "
